@@ -219,7 +219,7 @@ Tienes 2 alternativas:
 ### Clonar
 
 ```bash
-git clone <URL_DEL_REPO>
+git clone (https://github.com/Carl0gonzalez/Alkewallet-EvaluacionModulo2)
 cd AlkeWallet_core
 ```
 
@@ -258,5 +258,5 @@ Este proyecto no usa Maven/Gradle: los jars se agregan en `lib/`.
 
 ## Notas
 
--
--
+- Compartido bajo licencia MIT (copia, usa y reconoce)
+- Este proyecto fue desarrollado con fines didacticos y educativos. Sientete libre de colaborar y hacer sugerencias. 
