@@ -1,4 +1,4 @@
-# AlkeWallet (Consola)
+# AlkeWallet (Consola) 💳
 
 Billetera digital en consola desarrollada en **Java 17**, con registro y autenticación de usuario (en memoria), manejo de saldo en CLP y conversión a USD/EUR mediante tasas configurables.
 Incluye validaciones de clave, restricción de “solo 1 usuario registrado”, scripts `.sh` para compilar/ejecutar y pruebas unitarias con **JUnit 4**.
