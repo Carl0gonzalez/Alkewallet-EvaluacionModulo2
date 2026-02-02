@@ -142,16 +142,16 @@ AlkeWallet_core/
 
 ---
 
-## Manual de uso (funcional)
+##  🔗 Manual de uso (funcional)
 
-### 1) Menú inicial
+### 🔗 1) Menú inicial
 
 Al iniciar, el sistema muestra:
 - Registrar usuario
 - Iniciar sesión
 - Salir
 
-### 2) Registro de usuario
+### 🔗 2) Registro de usuario
 
 - Se permite registrar **solo un usuario** (si intentas registrar un segundo, se rechaza).
 - La clave debe cumplir:
@@ -159,12 +159,12 @@ Al iniciar, el sistema muestra:
   - solo letras y números
   - sin secuencias de 4 dígitos consecutivos (ej: `1234`, `4321`)
 
-### 3) Login
+### 🔗 3) Login
 
 - Ingresa usuario y clave.
 - Si son correctos, se abre el menú de billetera.
 
-### 4) Menú de billetera
+### 🔗 4) Menú de billetera
 
 Opciones disponibles:
 - Ver saldo (elige moneda CLP/USD/EUR).
@@ -177,20 +177,20 @@ Opciones disponibles:
 
 ---
 
-## Ejecutar en Eclipse
+## 🔗 Ejecutar en Eclipse
 
-### Importar el proyecto
+### 🔗 Importar el proyecto
 
 1. `File → Import… → Existing Projects into Workspace`
 2. Selecciona la carpeta `AlkeWallet_core/` (la raíz del proyecto).
 3. Finaliza el import.
 
-### Ejecutar la aplicación
+### 🔗 Ejecutar la aplicación
 
 1. Abre `src/com/alkewallet/core/Principal.java`
 2. Click derecho → **Run As → Java Application**.
 
-### Ejecutar las pruebas (JUnit)
+### 🔗 Ejecutar las pruebas (JUnit)
 
 Tienes 2 alternativas:
 
@@ -201,7 +201,7 @@ Tienes 2 alternativas:
 - Click derecho sobre `test/com/alkewallet/testrunner/TestRunner.java`
 - Run As → Java Application
 
-### Agregar JUnit al Build Path (sin Maven)
+### 🔗 Agregar JUnit al Build Path (sin Maven)
 
 1. Descarga los jars y colócalos en `lib/`
 2. Click derecho proyecto → Build Path → Configure Build Path…
@@ -209,7 +209,7 @@ Tienes 2 alternativas:
 
 ---
 
-## Ejecutar desde terminal (clonando el repo)
+## 🔗 Ejecutar desde terminal (clonando el repo)
 
 ### Requisitos
 
@@ -245,7 +245,7 @@ Asegúrate de tener los jars en `lib/` y luego:
 
 ---
 
-## Dependencias (descarga manual)
+## 🔗 Dependencias (descarga manual)
 
 Este proyecto no usa Maven/Gradle: los jars se agregan en `lib/`.
 
@@ -255,6 +255,36 @@ Este proyecto no usa Maven/Gradle: los jars se agregan en `lib/`.
   - https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
 
 ---
+
+---
+
+## 🧪 Informe de pruebas
+
+### 🎯 Alcance y objetivo
+El proyecto incorpora un set de **pruebas unitarias** orientadas a validar reglas de negocio y comportamiento de métodos en forma aislada, sin dependencias externas (no se utiliza base de datos ni servicios).  
+El objetivo es asegurar la correcta operación de: registro/autenticación, validación de claves, operaciones de saldo y conversión de moneda.
+
+---
+
+### 🛠️ Herramientas y ejecución
+- **Framework:** JUnit 4  
+- **Ubicación de pruebas:** `test/com/alkewallet/test/`  
+- **Ejecución por terminal:**
+  ```bash
+  ./run_tests.sh
+Salida en consola: el TestRunner imprime el avance por prueba (START/OK/FAIL) y al final un resumen con métricas (cantidad ejecutada, fallidas, ignoradas y tiempo).
+
+✅ Cobertura (pruebas unitarias)
+Suite (archivo)	Unidad bajo prueba	Casos cubiertos (resumen)
+CuentaTest.java	Cuenta	Depósito válido, depósito inválido (0/negativo), retiro válido, retiro rechazado por saldo insuficiente
+TasaCambioTest.java	TasaCambio	Conversiones CLP↔USD, CLP↔EUR; verificación de formato numérico es-CL (coma decimal / punto de miles)
+UsuarioTest.java	Usuario	Clave mínima, solo alfanumérica, rechazo por caracteres especiales, rechazo por secuencias consecutivas (asc/desc), aceptación sin 4 consecutivos
+GestorUsuariosTest.java	GestorUsuarios	Registro y autenticación, restricción solo 1 usuario (no se sobreescribe), rechazo por claves inválidas
+Nota: los tests están diseñados para cubrir entradas válidas e inválidas, incluyendo casos límite (por ejemplo montos 0, saldo insuficiente y claves con patrones prohibidos).
+
+🔗 Pruebas de integración
+No se incluyen pruebas de integración “clásicas” (por ejemplo con BD, API REST o servicios externos), ya que la aplicación funciona completamente en memoria y por consola.
+Como verificación de integración interna, se validan flujos entre módulos (por ejemplo GestorUsuarios → validación de Usuario y reglas de clave), asegurando que las restricciones definidas se cumplan a nivel de interacción.
 
 ## Notas
 
