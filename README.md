@@ -127,9 +127,9 @@ AlkeWallet_core/
 │   │   ├── CuentaTest.java
 │   │   ├── TasaCambioTest.java
 │   │   ├── UsuarioTest.java
-│   │   └── GestorUsuariosTest.java
-│   └── com/alkewallet/testrunner/
-│       └── TestRunner.java      # Runner con RunListener (salida detallada)
+│   │   ├── GestorUsuariosTest.java
+│   │   │ 
+│   └── └── TestRunner.java      # Runner con RunListener (salida detallada)
 │
 ├── lib/                         # Dependencias locales
 │   ├── junit-4.13.2.jar
