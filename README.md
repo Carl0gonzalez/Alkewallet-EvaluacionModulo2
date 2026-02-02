@@ -280,7 +280,7 @@ CuentaTest.java	Cuenta	Depósito válido, depósito inválido (0/negativo), reti
 TasaCambioTest.java	TasaCambio	Conversiones CLP↔USD, CLP↔EUR; verificación de formato numérico es-CL (coma decimal / punto de miles)
 UsuarioTest.java	Usuario	Clave mínima, solo alfanumérica, rechazo por caracteres especiales, rechazo por secuencias consecutivas (asc/desc), aceptación sin 4 consecutivos
 GestorUsuariosTest.java	GestorUsuarios	Registro y autenticación, restricción solo 1 usuario (no se sobreescribe), rechazo por claves inválidas
-Nota: los tests están diseñados para cubrir entradas válidas e inválidas, incluyendo casos límite (por ejemplo montos 0, saldo insuficiente y claves con patrones prohibidos).
+Nota: los tests están diseñados para cubrir entradas válidas e inválidas, incluyendo casos límite (por ejemplo montos 0, saldo insuficiente y claves con patrones prohibidos). ```
 
 🔗 Pruebas de integración
 No se incluyen pruebas de integración “clásicas” (por ejemplo con BD, API REST o servicios externos), ya que la aplicación funciona completamente en memoria y por consola.
